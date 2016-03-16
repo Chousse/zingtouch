@@ -68,6 +68,14 @@ class ZingEvent {
       this.x = event.clientX;
       this.y = event.clientY;
     }
+
+    //noinspection JSUnusedGlobalSymbols
+    /**
+     * The target for this event based upon coordinates rather than the 'initial' element.
+     * @see http://stackoverflow.com/questions/3918842/how-to-find-out-the-actual-event-target-of-touchmove-javascript-event
+     * @type {Element}
+     */
+    this.positionTarget = document.elementFromPoint(this.x, this.y);
   }
 
   /*constructor*/

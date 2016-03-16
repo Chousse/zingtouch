@@ -37,7 +37,7 @@ function arbiter(event, state) {
     event.preventDefault();
     var gestures = interpreter(bindings, event, state);
     for (var i = 0; i < gestures.length; i++) {
-      dispatcher(gestures[i].binding, gestures[i].data);
+      dispatcher(gestures[i].binding, gestures[i].data, event);
     }
   }
 

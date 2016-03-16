@@ -9,12 +9,14 @@
  * @param {Binding} binding - An object of type Binding
  * @param {Object|null} data - The metadata computed by the gesture being emitted.
  */
-function dispatcher(binding, data) {
+function dispatcher(binding, data, event) {
 
   //noinspection JSCheckFunctionSignatures
   var newEvent = new CustomEvent(binding.gesture.getId(), {
     detail: data
   });
+
+  newEvent.originalEvent = event;
   emitEvent(binding.element, newEvent, binding);
 }
 /*dispatcher*/
