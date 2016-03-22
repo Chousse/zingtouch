@@ -66,7 +66,15 @@ class Pan extends Gesture {
 
         data[i] = {
           distanceFromOrigin: util.distanceBetweenTwoPoints(inputs[i].initial.x, inputs[i].current.x,
-            inputs[i].initial.y, inputs[i].current.y)
+            inputs[i].initial.y, inputs[i].current.y),
+          initial: {
+            x: inputs[i].initial.x,
+            y: inputs[i].initial.y
+          },
+          current: {
+            x: inputs[i].current.x,
+            y: inputs[i].current.y
+          }
         };
       }
     }

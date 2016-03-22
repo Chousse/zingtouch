@@ -116,10 +116,14 @@ class State {
    */
   updateInputs(event) {
     //Return if all gestures did not originate from the same target
-    if (event.touches && event.touches.length !== event.targetTouches.length) {
-      state.resetInputs();
-      return false;
-    }
+    console.log(event.touches);
+    console.log(event.targetTouches.length);
+
+    //TODO: Need to make sure the touches are within the same Region, rather than just the same element.
+    //if (event.touches && event.touches.length !== event.targetTouches.length) {
+    //  state.resetInputs();
+    //  return false;
+    //}
 
     if (event.touches) {
       for (var index in event.changedTouches) {
