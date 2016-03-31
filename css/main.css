@@ -1,0 +1,383 @@
+/* Load Webfonts ----------------------------------------------------------- */
+@import url('//fonts.googleapis.com/css?family=Lato:300,300italic,400,900,900italic');
+
+/* Border Box Fix  --------------------------------------------------------- */
+* {
+    box-sizing:border-box;
+}
+
+/* Wireframe Preview ------------------------------------------------------- */
+.wireframe header,
+.wireframe main,
+.wireframe footer,
+.wireframe nav,
+.wireframe section,
+.wireframe ul,
+.wireframe img,
+.wireframe .wrap,
+.wireframe .cell {
+    border:1px solid #333;
+    background-color:rgba(0,0,0,0.1);
+}
+.wireframe * {
+    box-shadow:none !important;
+    border-color:#000 !important;
+    color:#000 !important;
+}
+.wireframe header {
+    min-height:40px;
+}
+.wireframe .wrap {
+    min-height:20px;
+}
+.wireframe .cell {
+    text-align:center;
+}
+
+/* Content Block Size & Positioning ---------------------------------------- */
+header, main, footer {
+    width:100%;
+}
+header {
+    position:relative;
+    padding:10px 0px;
+    top:0px;
+}
+img {
+    max-width:100%;
+    height:auto;
+}
+
+/* Wrapper ----------------------------------------------------------------- */
+.wrap {
+    margin:auto;
+    max-width:1200px;
+    min-width:720px;
+}
+
+/* Default Block Padding/Margin -------------------------------------------- */
+ul {
+    padding-left:0;
+}
+
+/* Text & Copy ------------------------------------------------------------- */
+h1,h2,h3,h4,h5,h6,div,p,a,li {
+    font-family:'Lato','Helvetica','Arial',sans-serif;
+    color:#303030;
+}
+h1,h2,h3,h4,h5,h6 {
+    margin-top:0px;
+}
+h1,.h1 {
+    font-size:4rem;
+}
+p {
+    color:#333;
+}
+.center {
+    text-align:center;
+}
+[data-font~="light"] {
+    font-weight:300;
+}
+
+/* Anchors ----------------------------------------------------------------- */
+a {
+    color:rgb(198, 0, 50);
+    position:relative;
+    text-decoration:none;
+}
+a:after {
+    content:'';
+    position:absolute;
+    bottom:0px;
+    border-bottom:1px solid #F8698D;
+    width:0px;
+    left:0px;
+    transition:0.1s width ease-in-out;
+}
+a:hover:after {
+    width:100%;
+}
+
+/* Header Elements --------------------------------------------------------- */
+header {
+    background:#F50F49;
+}
+header .wrap {
+    display:flex;
+    justify-content:space-between;
+    height:2rem;
+}
+header #logo {
+    color:#FFF;
+    font-size:2rem;
+    font-style:italic;
+    line-height:2rem;
+    margin-bottom:0px;
+}
+header nav {
+    height:2rem;
+}
+header nav ul {
+    display:flex;
+    justify-content:space-between;
+    list-style-type:none;
+    margin:0px;
+    padding:0px;
+    width:16rem;
+}
+header nav a {
+    color:#FFF;
+    font-weight:300;
+    line-height:2rem;
+    text-decoration:none;
+}
+
+/* Main -------------------------------------------------------------------- */
+main {
+    background-color:#F9F9F9;
+    padding:2rem 0;
+}
+
+/* Footer ------------------------------------------------------------------ */
+footer {
+    background-color:#F0F0F0;
+    padding:2rem 0;
+}
+footer nav {
+    display:flex;
+    justify-content:center;
+}
+footer nav ul {
+    display:flex;
+    justify-content:space-between;
+    list-style-type:none;
+    margin:0;
+}
+footer nav li:not(:last-of-type) {
+    margin:0 2rem 0 0;
+}
+
+/* Grid System ------------------------------------------------------------- */
+.grid {
+    display:flex;
+    width:100%
+}
+.grid.gutter {
+    padding:0 0 1rem 0;
+}
+.cell {
+    flex:1
+}
+.grid.gutter .cell:not(:last-of-type) {
+    padding:0 1rem 0 0;
+}
+.cell.bottom {
+    align-self:flex-end;
+}
+.cell.mid {
+    align-self:center;
+}
+.cell[class*="_of_"] {
+    flex:none;
+}
+.cell._1_of_6 {
+    width:16%;
+}
+.cell._1_of_5 {
+    width:20%;
+}
+.cell._1_of_4 {
+    width:25%;
+}
+.cell._1_of_3 {
+    width:33%;
+}
+.cell._2_of_5 {
+    width:40%;
+}
+
+/* Cards ------------------------------------------------------------------- */
+.card {
+    background-color:#FFF;
+    border:1px solid rgb(200, 200, 200);
+    border-radius:2px;
+    box-shadow:rgba(0, 0, 0, 0.1) 0px 1px 2px;
+    padding:1rem;
+}
+.card.dark {
+    background-color:#F9F9F9;
+}
+.card .highlight {
+    margin:0 0 1rem 0;
+}
+.mid.cell > .card {
+
+}
+
+/* Banners ----------------------------------------------------------------- */
+.banner {
+    padding:2rem 0;
+    text-align:center;
+}
+.banner .wrap {
+    align-items:center;
+    flex-direction:column;
+    justify-content:space-between;
+}
+.banner h1, .banner .h1 {
+    color:#C60032;
+    margin-bottom:1rem;
+}
+.banner .hero {
+    margin-bottom:1rem;
+}
+.banner .ctas {
+    display:flex;
+    justify-content:space-between;
+    list-style-type:none;
+    margin:auto;
+    width:20rem;
+}
+.banner .ctas a {
+    display:block;
+}
+
+/* Buttons ----------------------------------------------------------------- */
+[data-button] {
+    background:rgba(198, 0, 50, 0);
+    border:1px solid rgb(198, 0, 50);
+    border-radius:2px;
+    box-shadow:rgba(0, 0, 0, 0.1) 0px 1px 2px;
+    color:rgb(198, 0, 50);
+    display:block;
+    padding:1rem;
+    text-decoration:none;
+    transition:0.1s background-color ease-in-out;
+}
+a[data-button]:after {
+    display:none;
+}
+[data-button]:hover {
+    background:rgba(198, 0, 50, 0.1);
+}
+[data-button~="teal"] {
+    background:rgba(13, 217, 145, 0);
+    border-color:rgb(13, 217, 145);
+    color:rgb(13, 217, 145);
+}
+[data-button~="teal"]:hover {
+    background:rgba(13, 217, 145, 0.1);
+}
+[data-button~="orange"] {
+    background:rgba(255, 94, 16, 0);
+    border-color:rgb(255, 94, 16);
+    color:rgb(255, 94, 16);
+}
+[data-button~="orange"]:hover {
+    background:rgba(255, 94, 16, 0.1);
+}
+
+/* Above Phones ------------------------------------------------------------ */
+@media (min-width:480px) {
+    html {
+        font-size:18px;
+    }
+}
+
+/* Above Tablets ----------------------------------------------------------- */
+@media (min-width:768px) {
+    /* Wrapper ------------------------------------------------------------- */
+    .wrap {
+        margin:auto;
+        width:50rem;
+    }
+
+}
+
+/* Above Desktops ---------------------------------------------------------- */
+@media (min-width:1200px) {
+    /* Wrapper ------------------------------------------------------------- */
+    .wrap {
+        margin:auto;
+        width:100rem;
+    }
+}
+
+/* Below Desktops ---------------------------------------------------------- */
+@media (max-width:1199px) {
+    /* Wrapper ------------------------------------------------------------- */
+    .wrap {
+        margin:auto;
+        width:40rem;
+    }
+}
+
+/* Below Tablets ----------------------------------------------------------- */
+@media (max-width:767px) {
+    /* Wrapper ------------------------------------------------------------- */
+    .wrap {
+        margin:auto;
+        width:25rem;
+    }
+}
+
+/* Below Phones ------------------------------------------------------------ */
+@media (max-width:480px) {
+    /* Phones - Base Font Size --------------------------------------------- */
+    html {
+        font-size:16px;
+    }
+
+    /* Phones - Wrapper ---------------------------------------------------- */
+    .wrap {
+        max-width:350px;
+        min-width:200px;
+    }
+
+    /* Phones - Header ----------------------------------------------------- */
+    header .wrap {
+        flex-direction:column;
+    }
+    header nav {
+        display:none;
+    }
+    header nav ul {
+        justify-content:space-around;
+        width:100%;
+    }
+
+    /* Phones - Banners ---------------------------------------------------- */
+    .banner {
+        padding:1rem 0;
+    }
+    .banner h1, .banner .h1 {
+        font-size:2rem;
+    }
+
+    /* Phones - Main ------------------------------------------------------- */
+    main {
+        text-align:center;
+    }
+
+    /* Phones - Grid ------------------------------------------------------- */
+    .grid.collapse {
+        flex-direction:column;
+    }
+    .grid.collapse.reverse {
+        flex-direction:column-reverse;
+    }
+    .grid.collapse .cell {
+        width:100%;
+    }
+    .grid.collapse.gutter .cell:not(:last-of-type) {
+        padding:0 0 1rem 0;
+    }
+    .grid.collapse.reverse.gutter .cell:first-of-type {
+        padding:0;
+    }
+    .grid.collapse.reverse.gutter .cell:not(:first-of-type) {
+        padding:0 0 1rem 0;
+    }
+}
