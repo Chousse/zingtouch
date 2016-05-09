@@ -32,7 +32,7 @@ class Binder {
       }
     }
   }
-  /*constructor*/
+  /* constructor */
 }
 
 export default Binder;
